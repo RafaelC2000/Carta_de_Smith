@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.e{
+    display: none;
+}
+.container{
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    margin: 50px auto;
+    outline: 5px solid gray;
+    box-shadow: 0px 0px 15px 20px grey;
+    overflow: visible;
+}
+.container .circle{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 500px;
+    outline: 2px solid black;
+    overflow: hidden;
+}
+.circle .axis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    border: 1px solid black;
+    position: absolute;
+}
+.axis .center{
+    border: 1px solid greenyellow;
+    position: absolute;
+    z-index: 1;
+}
+.circle .eg1{
+    width: 800px;
+    height: 800px;
+    border: 2px solid blue;
+    border-radius: 400px;
+    position: absolute;
+}
+.circle .eg2{
+    width: 666px;
+    height: 666px;
+    border: 2px solid blue;
+    border-radius: 333px;
+    position: absolute;
+}
+.circle .eg3{
+    width: 500px;
+    height: 500px;
+    outline: 2px solid blue;
+    border-radius: 500px;
+    position: absolute;
+}
+.circle .eg4{
+    width: 250px;
+    height: 250px;
+    border: 2px solid blue;
+    border-radius: 250px;
+    position: absolute;
+}
+.circle .egy1{
+    width: 4000px;
+    height: 4000px;
+    border: 2px solid red;
+    border-radius: 2000px;
+    position: absolute;
+    transform: translate(2001px, 2001px);
+}
+.circle .egy2{
+    width: 2000px;
+    height: 2000px;
+    border: 2px solid red;
+    border-radius: 1000px;
+    position: absolute;
+    transform: translate(1001px, 1001px);
+}
+.circle .egy3{
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid red;
+    border-radius: 500px;
+    position: absolute;
+    transform: translate(501px, 501px);
+}
+.circle .egy4{
+    width: 500px;
+    height: 500px;
+    border: 2px solid red;
+    border-radius: 250px;
+    position: absolute;
+    transform: translate(251px, 251px);
+}
+.circle .eg-y1{
+    width: 4000px;
+    height: 4000px;
+    border: 2px solid red;
+    border-radius: 2000px;
+    position: absolute;
+    transform: translate(2001px, -2001px);
+}
+.circle .eg-y2{
+    width: 2000px;
+    height: 2000px;
+    border: 2px solid red;
+    border-radius: 1000px;
+    position: absolute;
+    transform: translate(1001px, -1001px);
+}
+.circle .eg-y3{
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid red;
+    border-radius: 500px;
+    position: absolute;
+    transform: translate(501px, -501px);
+}
+.circle .eg-y4{
+    width: 500px;
+    height: 500px;
+    border: 2px solid red;
+    border-radius: 250px;
+    position: absolute;
+    transform: translate(251px, -251px);
+}
