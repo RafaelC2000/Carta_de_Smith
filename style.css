@@ -130,3 +130,20 @@
     position: absolute;
     transform: translate(251px, -251px);
 }
+.point_u{
+    z-index: 1;
+    /*width: 500px;
+    height: 500px;*/
+    border: 2px solid orange;
+    /*border-radius: 250px;*/
+    position: absolute;
+}
+.point_v{
+    z-index: 1;
+    /*width: 500px;
+    height: 500px;*/
+    border: 2px solid green;
+    /*border-radius: 250px;*/
+    position: absolute;
+    /*transform: translate(251px, -251px);*/
+}
