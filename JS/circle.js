@@ -4,6 +4,7 @@ $send=document.getElementById("send")
 $impedance=document.getElementById("impedance")
 $real=document.getElementById("real")
 $imaginary=document.getElementById("imaginary")
+$normal=document.querySelector(".normal")
 
 $send.addEventListener('click',() => {
     let z0 = $impedance.value
@@ -29,6 +30,12 @@ function normalize (z,r,i) {
     r=r/z
     i=i/z
     //Insercion de la normalizada
+    if(i<0){
+        z="-"
+    }else{
+        z="+"
+    }
+    $normal.innerHTML = `${r} ${z} i${Math.abs(i)}&#937`
     r=1/(1+r)
     i=1/i
     setCoords(r,i)
