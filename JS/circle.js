@@ -39,6 +39,7 @@ function normalize (z,r,i) {
     r=1/(1+r)
     i=1/i
     setCoords(r,i)
+    findPoint((1-r/2)*1000,1000,500,(1+i)*500,r,i)
 }
 
 function setCoords (r,i){
@@ -57,12 +58,18 @@ function setCoords (r,i){
     $pointV.style.setProperty("height", V)
     $pointV.style.setProperty("border-radius", V2)
     $pointV.style.setProperty("transform", V3)
-    
-    
-    console.log(getComputedStyle($pointU).getPropertyValue("width"))
-    console.log(getComputedStyle($pointU).getPropertyValue("border-radius"))
-    
-    console.log(getComputedStyle($pointV).getPropertyValue("width"))
-    console.log(getComputedStyle($pointV).getPropertyValue("border-radius"))
-    console.log(getComputedStyle($pointV).getPropertyValue("transform"))
+}
+
+function findPoint(a,h,b,k,r,i){
+    console.log(`C1: (${a},${b}):${r*500}`)
+    console.log(`C2: (${h},${k}):${i*500}`)
+
+    let c=[0.25*1000*((4*r)+(i*(1+i)))] 
+    let l=(Math.pow(i,2)+Math.pow(r,2))
+    let m=(2*i*r*h - 2*c*i - 2*k*Math.pow(r,2))
+    let n=Math.pow(c,2) - 2*c*h*r + Math.pow(h,2)*Math.pow(r,2) + Math.pow(k,2) - Math.pow(i,2)*Math.pow(500,2)*Math.pow(r,2)
+    console.log(`${r}x+${i}y=${c},${l},${m},${n}`)
+    let y=((-m)+Math.sqrt(Math.pow(m,2)-4*l*n))/(2*l)
+    let x=(c-y*i)*(1/r) 
+    console.log(x,y)
 }
