@@ -198,3 +198,11 @@
     position: absolute;
     transform: translate(-208px,-395px);
 }
+#point{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    outline: 4px solid greenyellow;
+    position: absolute;
+    z-index: 10;
+}

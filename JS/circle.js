@@ -5,6 +5,8 @@ $impedance=document.getElementById("impedance")
 $real=document.getElementById("real")
 $imaginary=document.getElementById("imaginary")
 $normal=document.querySelector(".normal")
+$point=document.getElementById("point")
+$coords=document.getElementById("coords")
 
 $send.addEventListener('click',() => {
     let z0 = $impedance.value
@@ -61,15 +63,34 @@ function setCoords (r,i){
 }
 
 function findPoint(a,h,b,k,r,i){
-    console.log(`C1: (${a},${b}):${r*500}`)
-    console.log(`C2: (${h},${k}):${i*500}`)
+    let discriminant
+    console.log(`C1: (${a}a,${b}b):${r*500}R`)
+    console.log(`C2: (${h}h,${k}k):${i*500}I`)
 
     let c=[0.25*1000*((4*r)+(i*(1+i)))] 
-    let l=(Math.pow(i,2)+Math.pow(r,2))
-    let m=(2*i*r*h - 2*c*i - 2*k*Math.pow(r,2))
-    let n=Math.pow(c,2) - 2*c*h*r + Math.pow(h,2)*Math.pow(r,2) + Math.pow(k,2) - Math.pow(i,2)*Math.pow(500,2)*Math.pow(r,2)
-    console.log(`${r}x+${i}y=${c},${l},${m},${n}`)
-    let y=((-m)+Math.sqrt(Math.pow(m,2)-4*l*n))/(2*l)
-    let x=(c-y*i)*(1/r) 
+    let p=(2*h - 2*a)
+    let q=(2*k - 2*b)
+    let o=(Math.pow(r*500,2) + h*h + k*k - a*a - b*b - Math.pow(i*500,2))
+    // let l=(Math.pow(i,2)+Math.pow(r,2))
+    // let m=(2*i*r*h - 2*c*i - 2*k*Math.pow(r,2))
+    // let n=Math.pow(c,2) - 2*c*h*r + Math.pow(h,2)*Math.pow(r,2) + Math.pow(k,2)*Math.pow(r,2) - Math.pow(i*500,2)*Math.pow(r,2)
+    let u=(Math.pow(p,2)+Math.pow(q,2))
+    let v=[(2*q*p*h - 2*o*q - 2*k*Math.pow(p,2))]/u
+    let w=[Math.pow(o,2)]/u - [2*o*h*p]/u + [Math.pow(h,2)*Math.pow(p,2)]/u + [Math.pow(k,2)*Math.pow(p,2)]/u - [Math.pow(i*500,2)*Math.pow(p,2)]/u
+    console.log(`${p}x+${q}y=${o},${u/u},${v},${w}`)
+    // console.log(`${r}x+${i}y=${c},${l},${m},${n}`)
+    //let y=((-m)+Math.sqrt(Math.pow(m,2)-4*l*n))/(2*l)
+    let y
+    if(i<0){
+        y=((-v)-Math.sqrt(Math.pow(v,2)-4*1*w))/(2*1)
+    }else{
+        y=((-v)+Math.sqrt(Math.pow(v,2)-4*1*w))/(2*1)
+    }
+    let x=(o-y*q)/p
     console.log(x,y)
+    let point = `translate(${x}px, ${-(y)}px)`
+    $point.style.setProperty("transform", point)
+
+    $coords.style.setProperty("transform", point)
+    $coords.innerText = `(${((1/r)-1).toFixed(3)},${(1/i).toFixed(3)})`
 }
