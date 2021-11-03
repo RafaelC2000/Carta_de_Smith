@@ -7,6 +7,7 @@ $imaginary=document.getElementById("imaginary")
 $normal=document.querySelector(".normal")
 $point=document.getElementById("point")
 $coords=document.getElementById("coords")
+$new=document.querySelector(".newCircle")
 
 $send.addEventListener('click',() => {
     let z0 = $impedance.value
@@ -93,4 +94,13 @@ function findPoint(a,h,b,k,r,i){
 
     $coords.style.setProperty("transform", point)
     $coords.innerText = `(${((1/r)-1).toFixed(3)},${(1/i).toFixed(3)})`
+
+    newCircle(Math.abs(500-x),Math.abs(500-y))
+}
+
+function newCircle(x,y){
+    let r=Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
+    $new.style.setProperty("width", `${2*r}px`)
+    $new.style.setProperty("height", `${2*r}px`)
+    console.log(r)
 }

@@ -206,3 +206,17 @@
     position: absolute;
     z-index: 10;
 }
+.circle .new{
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new .newCircle{
+    z-index: 15;
+    position: absolute;
+    border-radius: 500px;
+    outline: 2px solid rgb(5, 5, 82);
+}
