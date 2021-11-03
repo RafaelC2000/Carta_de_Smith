@@ -38,7 +38,7 @@ function normalize (z,r,i) {
     }else{
         z="+"
     }
-    $normal.innerHTML = `${r} ${z} i${Math.abs(i)}&#937`
+    $normal.innerHTML = `${r.toFixed(4)} ${z.toFixed(4)} i${Math.abs(i)}&#937`
     r=1/(1+r)
     i=1/i
     setCoords(r,i)
