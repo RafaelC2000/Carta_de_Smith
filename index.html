@@ -11,14 +11,19 @@
     <div class="inserts">
         <form action="">
             <div class="characteristic">
-                <p>Impedancia Caracteristica:</p>
-                <span>Z<sub>0</sub>=</span>
+                <label for="impedance"><p>Impedancia Caracteristica:</p></label>
+                <label for="impedance"<span>Z<sub>0</sub>=</span></label>
                 <input type="text" id="impedance"><label for="impedance">&#937</label>
             </div>
             <div class="charge">
-                <p>Carga:</p>
-                <span>Z<sub>L</sub>=</span>
-                <input type="text" id="real"><label for="real"></label><span> + i </span><input type="text" id="imaginary"><label for="imaginary">&#937;</label>
+                <label for="real"><p>Carga:</p></label>
+                <label for="real"><span>Z<sub>L</sub>=</span></label>
+                <input type="text" id="real"><label for="imaginary"><span> + i </span></label><input type="text" id="imaginary"><label for="imaginary">&#937;</label>
+            </div>
+            <div class="landa">
+                <label for="landa"><p>Landa:</p></label>
+                <label for="landa"><span>&#955;=</span></label>
+                <input type="text" id="landa">
             </div>
             <div class="button">
                 <button type="button" id="send">Enviar</button>
@@ -73,6 +78,8 @@
         </div>
         
         <div id="point"></div>
+
+        <div id="point2"></div>
 
         <div id="coords"></div>
     </div>

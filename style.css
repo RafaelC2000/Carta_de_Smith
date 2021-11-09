@@ -220,3 +220,11 @@
     border-radius: 500px;
     outline: 2px solid rgb(5, 5, 82);
 }
+#point2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    outline: 4px solid purple;
+    position: absolute;
+    z-index: 10;
+}
