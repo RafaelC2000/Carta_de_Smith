@@ -7,9 +7,13 @@ $imaginary=document.getElementById("imaginary")
 $normal=document.querySelector(".normal")
 $point=document.getElementById("point")
 $coords=document.getElementById("coords")
+$coords2=document.getElementById("coords2")
 $new=document.querySelector(".newCircle")
 $landa=document.getElementById("landa")
 $point2=document.getElementById("point2")
+$pointNU=document.getElementById("point_nu")
+$pointNV=document.getElementById("point_nv")
+$recorrid=document.querySelector(".recorrid")
 
 $send.addEventListener('click',() => {
     let z0 = $impedance.value
@@ -318,4 +322,45 @@ function landa(r,x,y,sX,sY) {
     let point = `translate(${m}px, ${-(n)}px)`
 
     $point2.style.setProperty("transform", point)
+
+    setR(m,n)
+}
+
+function setR(m,n){
+    let x,y,r,a,b,d,y2,i,t,d2
+    a=1000-m
+    b=Math.abs(500-n)
+    r=(a*a + b*b)/(2*a)
+    x=r
+    y=500
+    d=2*r
+    d-=4
+    console.log(`x: ${x}, y: ${y} ; r ${r}, d: ${d}`)
+
+    y2=(a*a - 500*500 + n*n)/(2*n - 1000)
+    i=500 - y2
+    d2=2*i
+    console.log(`x: 1000, y: ${y2} ; i ${i}, d: ${d2}`)
+    // t=i*1000, i=(i*1000)
+    d2 = (i<0) ? d2+4 : d2-4
+    
+    let U = `${d}px`, U2 = `${d/2}px`
+    let V = `${Math.abs(d2)}px`, V2 = `${Math.abs(d2/2)}px`, V3 = `translate(${Math.abs(i)}px, ${(i)}px)`
+    
+    $pointNU.style.setProperty("width", U)
+    $pointNU.style.setProperty("height", U)
+    $pointNU.style.setProperty("border-radius", U2)
+    
+    $pointNV.style.setProperty("width", V)
+    $pointNV.style.setProperty("height", V)
+    $pointNV.style.setProperty("border-radius", V2)
+    $pointNV.style.setProperty("transform", V3)
+    
+    let point = `translate(${m}px, ${-(n)}px)`
+    r=r/500
+    i=(i/500)*-1
+    z = (i<0) ? z="-" : z="+"
+    $coords2.style.setProperty("transform", point)
+    $coords2.innerText = `(${((1/r)-1).toFixed(3)},${(1/i).toFixed(3)})`
+    $recorrid.innerText = `${((1/r)-1).toFixed(3)} ${z} i${(Math.abs((1/i))).toFixed(3)}Ω`
 }

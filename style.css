@@ -228,3 +228,20 @@
     position: absolute;
     z-index: 10;
 }
+#point_nu{
+    z-index: 1;
+    /*width: 496px;
+    height: 496px;*/
+    border: 2px solid rgb(255, 115, 0);
+    /*border-radius: 250px;*/
+    position: absolute;
+}
+#point_nv{
+    z-index: 1;
+    /*width: 496px;
+    height: 496px;*/
+    border: 2px solid rgb(3, 82, 3);
+    /*border-radius: 250px;*/
+    position: absolute;
+    /*transform: translate(251px, -251px);*/
+}
