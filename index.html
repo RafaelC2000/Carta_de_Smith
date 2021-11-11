@@ -8,37 +8,55 @@
     <title>Carta de Smith</title>
 </head>
 <body>
-    <div class="inserts">
-        <form action="">
-            <div class="characteristic">
-                <label for="impedance"><p>Impedancia Caracteristica:</p></label>
-                <label for="impedance"<span>Z<sub>0</sub>=</span></label>
-                <input type="text" id="impedance"><label for="impedance">&#937</label>
-            </div>
-            <div class="charge">
-                <label for="real"><p>Carga:</p></label>
-                <label for="real"><span>Z<sub>L</sub>=</span></label>
-                <input type="text" id="real"><label for="imaginary"><span> + i </span></label><input type="text" id="imaginary"><label for="imaginary">&#937;</label>
-            </div>
-            <div class="landa">
-                <label for="landa"><p>Landa:</p></label>
-                <label for="landa"><span>&#955;=</span></label>
-                <input type="text" id="landa">
-            </div>
-            <div class="button">
-                <button type="button" id="send">Enviar</button>
-            </div>
-
-        </form>
-    </div>
-    <div class="results">
-        <div>
-            <p>Normalizando respecto a Z<sub>0</sub>: </p>
-            <p><b>Z<sub>L</sub></b>= <span class="normal"></span></p>
+    <div class="top">
+        <div class="first">
+            <h1>Carta de Smith</h1>
+            <br>
+            <p>La carta de Smith es una herramienta gráfica que simplifica el análisis de las líneas de 
+                transmisión. Consiste en una familia de círculos y arcos que permiten describir impedancias 
+                (admitancias) y coeficientes de reflexión de tensión (de corriente).
+            </p>
+            <br>
         </div>
-        <div>
-            <p>Resultado despues de landa: </p>
-            <p><b><span>&#955;</span></b>= <span class="recorrid"></span></p>
+        <div class="inserts">
+            <h2>Insertar Valores</h2>
+            <form action="">
+                <div class="characteristic">
+                    <label for="impedance"><p>Impedancia Caracteristica:</p></label>
+                    <label for="impedance"<span>Z<sub>0</sub>=</span></label>
+                    <input type="text" id="impedance"><label for="impedance">&#937</label>
+                </div>
+                <div class="charge">
+                    <label for="real"><p>Carga:</p></label>
+                    <label for="real"><span>Z<sub>L</sub>=</span></label>
+                    <input type="text" id="real"><label for="imaginary"><span> + i </span></label><input type="text" id="imaginary"><label for="imaginary">&#937;</label>
+                </div>
+                <div class="landa">
+                    <label for="landa"><p>Landa:</p></label>
+                    <label for="landa"><span>&#955;=</span></label>
+                    <input type="text" id="landa">
+                </div>
+                <div class="button">
+                    <button type="button" id="send">Enviar</button>
+                </div>
+    
+            </form>
+        </div>
+        <div class="results">
+            <h2>Resultados</h2>
+            <div>
+                <p>Carga normalizada respecto a Z<sub>0</sub>: </p>
+                <p><b>Z<sub>L</sub></b>= <span class="normal"></span></p>
+            </div>
+            <div>
+                <p>Coeficiente de reflexión:</p>
+                <p><b>P<sub>L</sub>=</b> <span class="coe"></span></p>
+            </div>
+            <div>
+                <p>Impedancia de entrada: </p>
+                <p><b>Z<sub>&#955;</sub></b>= <span class="recorrid"></span></p>
+                <p><b>Z<sub>in</sub></b>= <span class="in"></span></p>
+            </div>
         </div>
     </div>
     <div class="container">

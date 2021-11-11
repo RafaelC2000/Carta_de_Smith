@@ -14,6 +14,8 @@ $point2=document.getElementById("point2")
 $pointNU=document.getElementById("point_nu")
 $pointNV=document.getElementById("point_nv")
 $recorrid=document.querySelector(".recorrid")
+$in=document.querySelector(".in")
+$coe=document.querySelector(".coe")
 
 $send.addEventListener('click',() => {
     let z0 = $impedance.value
@@ -110,7 +112,7 @@ function findPoint(a,h,b,k,r,i){
 }
 
 function newCircle(x,y,sX,sY){
-    let r=Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
+    let r=Math.sqrt(Math.pow(x,2) + Math.pow(y,2)), t
     $new.style.setProperty("width", `${2*r}px`)
     $new.style.setProperty("height", `${2*r}px`)
     landa(r,x,y,sX,sY)
@@ -173,6 +175,10 @@ function landa(r,x,y,sX,sY) {
         console.log(`x: ${x}, y: ${y}`)
         console.log(`p: ${p}, q: ${q}`)
         console.log(`m: ${m}, n: ${n}`)
+        let t= Math.atan(y/x)
+        t= t*(180/Math.PI) ;
+        console.log(t)
+        $coe.innerHTML = `${(r/500).toFixed(2)}  &#952; ${parseInt(180 + t)}`
     }else if(sX==true && sY==true){
         a=180-a
         console.log(`2. ${a}°`)
@@ -221,6 +227,10 @@ function landa(r,x,y,sX,sY) {
         console.log(`x: ${x}, y: ${y}`)
         console.log(`p: ${p}, q: ${q}`)
         console.log(`m: ${m}, n: ${n}`)
+        t= Math.atan(y/x)
+        t= t*(180/Math.PI)
+        console.log(t)
+        $coe.innerHTML = `${(r/500).toFixed(2)}  &#952; ${parseInt(t)}`
     }else if(sX==true && sY==false){
         a+=180
         console.log(`3, ${a}°`)
@@ -269,6 +279,10 @@ function landa(r,x,y,sX,sY) {
         console.log(`x: ${x}, y: ${y}`)
         console.log(`p: ${p}, q: ${q}`)
         console.log(`m: ${m}, n: ${n}`)
+        t= Math.atan(y/x)
+        t= t*(180/Math.PI)
+        console.log(t)
+        $coe.innerHTML = `${(r/500).toFixed(2)}  &#952; ${parseInt(t)}`
     }else if(sX==false && sY==false){
         a=360-a
         console.log(`4. ${a}°`)
@@ -317,6 +331,10 @@ function landa(r,x,y,sX,sY) {
         console.log(`x: ${x}, y: ${y}`)
         console.log(`p: ${p}, q: ${q}`)
         console.log(`m: ${m}, n: ${n}`)
+        t= Math.atan(y/x)
+        t= t*(180/Math.PI)
+        console.log(t)
+        $coe.innerHTML = `${(r/500).toFixed(2)}  &#952; ${parseInt(180 - t)*-1}`
     }
 
     let point = `translate(${m}px, ${-(n)}px)`
@@ -363,4 +381,5 @@ function setR(m,n){
     $coords2.style.setProperty("transform", point)
     $coords2.innerText = `(${((1/r)-1).toFixed(3)},${(1/i).toFixed(3)})`
     $recorrid.innerText = `${((1/r)-1).toFixed(3)} ${z} i${(Math.abs((1/i))).toFixed(3)}Ω`
+    $in.innerText = `${parseInt((((1/r)-1).toFixed(3))*$impedance.value)} ${z} i${parseInt((Math.abs((1/i))).toFixed(3)*$impedance.value)}Ω`
 }
