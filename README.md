@@ -12,4 +12,6 @@ https://drive.google.com/file/d/15faEZPd029djHFsPPCngHN5YvanrWVPo/view?usp=shari
 
 ##Reporte 
 ##Report
+
+##Deploy https://trusting-ardinghelli-c7f506.netlify.app/?fbclid=IwAR1-CNH_iQlCGRSzwlHfYJhh-_RLjrlb5cANSDoukotnLRDZoNuCVTZOV04
 ...
