@@ -6,12 +6,11 @@ emplear te álgebra, geometría analítica y trigonometría.
 *EN* This project its a universitary work and allow to resolv problematics about transmicion lines.
 Normaly for to use the Carta de Smith is used a grafic method, and to translate to WEB, was necessary to do algebra, analitic geometry and trigonometry.
 
-## Manual_de_uso 
-## User_manual
+## Manual_de_uso / User_manual
 https://drive.google.com/file/d/15faEZPd029djHFsPPCngHN5YvanrWVPo/view?usp=sharing
 
-## Reporte 
-## Report
+## Reporte / Report
 
-## Deploy https://trusting-ardinghelli-c7f506.netlify.app/?fbclid=IwAR1-CNH_iQlCGRSzwlHfYJhh-_RLjrlb5cANSDoukotnLRDZoNuCVTZOV04
+## Deploy 
+https://trusting-ardinghelli-c7f506.netlify.app/?fbclid=IwAR1-CNH_iQlCGRSzwlHfYJhh-_RLjrlb5cANSDoukotnLRDZoNuCVTZOV04
 ...
